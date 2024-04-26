@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Regna Bootstrap Template</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+  <title>EcoZooExplorer</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
 
     <!-- Favicons -->
     <link href="assets/img/favicon.png {{ asset('assets_front/assets/img/favicon.png') }}" rel="icon">
@@ -39,111 +39,120 @@
 
 <body>
 
-    <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top d-flex align-items-center header-transparent">
-        <div class="container d-flex justify-content-between align-items-center">
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+    <div class="container d-flex justify-content-between align-items-center">
 
-            <div id="logo">
-                <a href="index.html"><img src="{{ asset('assets_front/assets/img/logo.png') }}" alt=""></a>
-                <!-- Uncomment below if you prefer to use a text logo -->
-                <!--<h1><a href="index.html">Regna</a></h1>-->
-            </div>
+      <div id="logo">
+        <a href="index.html"><img src="{{ asset('assets_front/assets/img/Logo-KBS-1.png') }}" style="max-width: 165px" alt=""></a>
+        <!-- Uncomment below if you prefer to use a text logo -->
+        <!--<h1><a href="index.html">Regna</a></h1>-->
+      </div>
 
-            <nav id="navbar" class="navbar">
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#services">Event</a></li>
+          <li><a class="nav-link scrollto " href="#portfolio">Hewan</a></li>
+          <li><a class="nav-link scrollto" href="#team">PD KBS</a></li>
+          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
-                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-                    <li><a class="nav-link scrollto" href="#about">About</a></li>
-                    <li><a class="nav-link scrollto" href="#services">Services</a></li>
-                    <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
-                    <li><a class="nav-link scrollto" href="#team">Team</a></li>
-                    <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li><a href="#">Drop Down 1</a></li>
-                            <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i
-                                        class="bi bi-chevron-right"></i></a>
-                                <ul>
-                                    <li><a href="#">Deep Drop Down 1</a></li>
-                                    <li><a href="#">Deep Drop Down 2</a></li>
-                                    <li><a href="#">Deep Drop Down 3</a></li>
-                                    <li><a href="#">Deep Drop Down 4</a></li>
-                                    <li><a href="#">Deep Drop Down 5</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Drop Down 2</a></li>
-                            <li><a href="#">Drop Down 3</a></li>
-                            <li><a href="#">Drop Down 4</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-                    @guest
-                        <li><a class="nav-link scrollto" href="/login">Login</a></li>
-                    @endguest
-                    @auth
-                        <li>
-                            <form action="/logout" method="post">
-                                @csrf
-                                <button type="submit" class="nav-link text-white scrollto">
-                                    Logout
-                                </button>
-                            </form>
-                        </li>
-                    @endauth
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
                 </ul>
-                <i class="bi bi-list mobile-nav-toggle"></i>
-            </nav><!-- .navbar -->
+              </li>
+              <li><a href="#">Drop Down 2</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="#contact">Lokasi</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
+      <h1>Selamat Datang</h1>
+      <h2>Di Kebun Binatang Surabaya</h1>
+      <a href="#about" class="btn-get-started">Get Started</a>
+      <div class="row col-lg-4 col-md-2 justify-content-center">
+        <div class="social-links">
+          <a target="_blank" href="https://x.com/surabayazoo?t=v8LpE5eNyxm_Lj6YLjeo_w&s=08" class="twitter mx-1">
+          <i class="bi bi-twitter-x"></i></a>
+          <a target="_blank" href="https://www.facebook.com/profile.php?id=100016964654721&mibextid=ZbWKwL" class="facebook mx-1"><i class="bi bi-facebook"></i></a>
+          <a target="_blank" href="https://www.instagram.com/kebunbinatangsurabaya?igsh=MXhqcjN6eXVxdWx2Yg==" class="instagram mx-1"><i class="bi bi-instagram"></i></a>
+          <a target="_blank" href="https://youtube.com/@kebunbinatangsurabaya?si=O2OEd2eTcGNbQD30" class="youtube mx-1"><i class="bi bi-youtube"></i></a>
+          <a target="_blank" href="https://www.tiktok.com/@kebunbinatangsurabaya?_t=8lqvwtZ8YA4&_r=1" class="tiktok mx-1"><i class="bi bi-tiktok"></i></a>
         </div>
-    </header><!-- End Header -->
+      </div>
+    </div>
+  </section><!-- End Hero Section -->
 
-    <!-- ======= Hero Section ======= -->
-    <section id="hero">
-        <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
-            <h1>Welcome to Regna</h1>
-            <h2>We are team of talented designers making websites with Bootstrap</h2>
-            <a href="#about" class="btn-get-started">Get Started</a>
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about">
+      <div class="container" data-aos="fade-up">
+        <div class="row about-container">
+
+          <div class="col-lg-6 content order-lg-1 order-2">
+            <h2 class="title">Kebung Binatang Surabaya</h2>
+            <p>
+              didirikan oleh seorang jurnalis yang memiliki hobi mengumpulkan binatang yakni, H.F.K. Kommer pada 31 Agustus 1916, dengan nama vereeninging “Soerabaiasche Planten-en Dierentuin” yang berlokasi di Kaliondo. Kemudian pada tanggal 28 september 1917 berpindah lokasi ke jalan Groedo.
+            </p>
+
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+              <div class="icon"><i class="bi bi-briefcase"></i></div>
+              <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
+              <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
+            </div>
+          </div>
+
+          <div class="col-lg-6 background order-lg-2 d-flex" data-aos="fade-left" data-aos-delay="100"></div>
         </div>
-    </section><!-- End Hero Section -->
 
-    <main id="main">
+      </div>
+    </section><!-- End About Section -->
 
-        <!-- ======= About Section ======= -->
-        <section id="about">
-            <div class="container" data-aos="fade-up">
-                <div class="row about-container">
+    <!-- ======= Facts Section ======= -->
+    <section id="facts">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h3 class="section-title">Fakta</h3>
+          <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+        </div>
+        <div class="row counters">
 
-                    <div class="col-lg-6 content order-lg-1 order-2">
-                        <h2 class="title">Few Words About Us</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat.
-                        </p>
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="107" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Tahun</p>
+          </div>
 
-                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                            <div class="icon"><i class="bi bi-briefcase"></i></div>
-                            <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
-                            <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero
-                                tempore, cum soluta nobis est eligendi</p>
-                        </div>
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="2179" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Hewan</p>
+          </div>
 
-                        <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-                            <div class="icon"><i class="bi bi-card-checklist"></i></div>
-                            <h4 class="title"><a href="">Magni Dolores</a></h4>
-                            <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                                officia deserunt mollit anim id est laborum</p>
-                        </div>
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="500" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Pengunjung</p>
+          </div>
 
-                        <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-                            <div class="icon"><i class="bi bi-binoculars"></i></div>
-                            <h4 class="title"><a href="">Dolor Sitema</a></h4>
-                            <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                aliquip ex ea commodo consequat tarad limino ata</p>
-                        </div>
-
-                    </div>
-
-                    <div class="col-lg-6 background order-lg-2 order-1" data-aos="fade-left" data-aos-delay="100">
-                    </div>
-                </div>
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="105" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Pekerja</p>
+          </div>
 
             </div>
         </section><!-- End About Section -->
@@ -183,6 +192,27 @@
                     </div>
 
                 </div>
+
+    <!-- ======= Services Section ======= -->
+    <section id="services">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h3 class="section-title">Event</h3>
+          <p class="section-description mb-5">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6" data-aos="zoom-in">
+            <div class="box">
+              <div class="icon"><a href=""><i class="bi bi-briefcase"></i></a></div>
+              <h4 class="title"><a href="">Surabaya Zoo Night</a></h4>
+              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="zoom-in">
+            <div class="box">
+              <div class="icon"><a href=""><i class="bi bi-card-checklist"></i></a></div>
+              <h4 class="title"><a href="">Dolor Sitema</a></h4>
+              <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
 
             </div>
         </section><!-- End Facts Section -->
@@ -277,16 +307,13 @@
                         accusantium doloremque</p>
                 </div>
 
-                <div class="row" data-aos="fade-up" data-aos-delay="100">
-                    <div class="col-lg-12 d-flex justify-content-center">
-                        <ul id="portfolio-flters">
-                            <li data-filter="*" class="filter-active">All</li>
-                            <li data-filter=".filter-app">App</li>
-                            <li data-filter=".filter-card">Card</li>
-                            <li data-filter=".filter-web">Web</li>
-                        </ul>
-                    </div>
-                </div>
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h3 class="section-title">Hewan</h3>
+          <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+        </div>
 
                 <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
@@ -491,6 +518,40 @@
                     </div>
                 </div>
 
+    <!-- ======= Team Section ======= -->
+    <section id="team">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h3 class="section-title">PD KBS</h3>
+          <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+        </div>
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <div class="member" data-aos="fade-up" data-aos-delay="100">
+              <div class="pic"><img src="{{ asset('assets_front/assets/img/team-1.jpg') }}" alt=""></div>
+              <h4>Walter White</h4>
+              <span>Chief Executive Officer</span>
+              <div class="social">
+                <a href=""><i class="bi bi-twitter"></i></a>
+                <a href=""><i class="bi bi-facebook"></i></a>
+                <a href=""><i class="bi bi-instagram"></i></a>
+                <a href=""><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="member" data-aos="fade-up" data-aos-delay="200">
+              <div class="pic"><img src="{{ asset('assets_front/assets/img/team-2.jpg') }}" alt=""></div>
+              <h4>Sarah Jhinson</h4>
+              <span>Product Manager</span>
+              <div class="social">
+                <a href=""><i class="bi bi-twitter"></i></a>
+                <a href=""><i class="bi bi-facebook"></i></a>
+                <a href=""><i class="bi bi-instagram"></i></a>
+                <a href=""><i class="bi bi-linkedin"></i></a>
+              </div>
+
             </div>
         </section><!-- End Team Section -->
 
@@ -504,116 +565,56 @@
                 </div>
             </div>
 
-            <!-- Uncomment below if you wan to use dynamic maps -->
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22864.11283411948!2d-73.96468908098944!3d40.630720240038435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sbg!4v1540447494452"
-                width="100%" height="380" frameborder="0" style="border:0" allowfullscreen></iframe>
-
-            <div class="container mt-5">
-                <div class="row justify-content-center">
-
-                    <div class="col-lg-3 col-md-4">
-
-                        <div class="info">
-                            <div>
-                                <i class="bi bi-geo-alt"></i>
-                                <p>A108 Adam Street<br>New York, NY 535022</p>
-                            </div>
-
-                            <div>
-                                <i class="bi bi-envelope"></i>
-                                <p>info@example.com</p>
-                            </div>
-
-                            <div>
-                                <i class="bi bi-phone"></i>
-                                <p>+1 5589 55488 55s</p>
-                            </div>
-                        </div>
-
-                        <div class="social-links">
-                            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-                            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-                        </div>
-
-                    </div>
-
-                    <div class="col-lg-5 col-md-8">
-                        <div class="form">
-                            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-                                <div class="form-group">
-                                    <input type="text" name="name" class="form-control" id="name"
-                                        placeholder="Your Name" required>
-                                </div>
-                                <div class="form-group mt-3">
-                                    <input type="email" class="form-control" name="email" id="email"
-                                        placeholder="Your Email" required>
-                                </div>
-                                <div class="form-group mt-3">
-                                    <input type="text" class="form-control" name="subject" id="subject"
-                                        placeholder="Subject" required>
-                                </div>
-                                <div class="form-group mt-3">
-                                    <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-                                </div>
-                                <div class="my-3">
-                                    <div class="loading">Loading</div>
-                                    <div class="error-message"></div>
-                                    <div class="sent-message">Your message has been sent. Thank you!</div>
-                                </div>
-                                <div class="text-center"><button type="submit">Send Message</button></div>
-                            </form>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </section><!-- End Contact Section -->
-
-    </main><!-- End #main -->
-
-    <!-- ======= Footer ======= -->
-    <footer id="footer">
-        <div class="footer-top">
-            <div class="container">
-
-            </div>
+    <!-- ======= Contact Section ======= -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-header">
+          <h3 class="section-title">Lokasi</h3>
+          <p class="section-description">berikut adalah lokasi dari Kebun Binatang Surabaya</p>
         </div>
-
-        <div class="container">
-            <div class="copyright">
-                &copy; Copyright <strong>Regna</strong>. All Rights Reserved
-            </div>
-            <div class="credits">
-                <!--
-                All the links in the footer should remain intact.
-                You can delete the links only if you purchased the pro version.
-                Licensing information: https://bootstrapmade.com/license/
-                Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Regna
-              -->
-                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-            </div>
+        <div class="info text-center">
+          <div class="row align-items-center justify-content-center mb-4">
+              <div class="col-auto">
+                  <i class="bi bi-geo-alt"></i>
+                  <p class="mb-0">Jl. Setail No.1, Darmo, Kec. Wonokromo,<br>Surabaya, Jawa Timur 60241</p>
+              </div>
+              <div class="col-auto">
+                  <i class="bi bi-phone"></i>
+                  <p class="mb-0 ml-2">031-5678703</p>
+              </div>
+          </div>
         </div>
-    </footer><!-- End Footer -->
+      </div>
 
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-            class="bi bi-arrow-up-short"></i></a>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10 col-md-4">
+              <iframe src="https://maps.google.com/maps?q=Jl.+Setail+No.1%2C+Darmo%2C+Kec.+Wonokromo%2C+Surabaya%2C+Jawa+Timur+60241&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="380" frameborder="0" style="border:0" allowfullscreen></iframe>
+          </div>
+        </div>
+          
 
-    <!-- Vendor JS Files -->
-    <script src="{{ asset('assets_front/assets/vendor/purecounter/purecounter_vanilla.js') }}"></script>
-    <script src="{{ asset('assets_front/assets/vendor/aos/aos.js') }}"></script>
-    <script src="{{ asset('assets_front/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('assets_front/assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
-    <script src="{{ asset('assets_front/assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
-    <script src="{{ asset('assets_front/assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
-    <script src="{{ asset('assets_front/assets/vendor/php-email-form/validate.j') }}s"></script>
+        
 
-    <!-- Template Main JS File -->
-    <script src="{{ asset('assets_front/assets/js/main.js') }}"></script>
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{{ asset('assets_front/assets/vendor/purecounter/purecounter_vanilla.js') }}"></script>
+  <script src="{{ asset('assets_front/assets/vendor/aos/aos.js') }}"></script>
+  <script src="{{ asset('assets_front/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ asset('assets_front/assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
+  <script src="{{ asset('assets_front/assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+  <script src="{{ asset('assets_front/assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+  <script src="{{ asset('assets_front/assets/vendor/php-email-form/validate.j') }}s"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{{ asset('assets_front/assets/js/main.js') }}"></script>
+
 
 </body>
 

@@ -41,7 +41,7 @@
                         <!-- Nested Row within Card Body -->
                         <div class="row align-items-center">
                             <div class="col-lg-6 d-none d-lg-block">
-                                <img src="{{ asset('assets_login/img/logoLogin.png') }}" alt="Login">
+                                <img src="{{ asset('assets_login/img/logoLogin.png') }}" alt="Login" style="width:475px; margin-left:15px;">
                             </div>
                             <div class="col-lg-6">
                                 <div class="p-5">
@@ -66,7 +66,7 @@
                                             <input type="password" class="form-control form-control-user" id="password"
                                                 placeholder="Password" name="password" required>
                                         </div>
-                                        <button type="submit" class="btn btn-primary btn-user btn-block">Login</button>
+                                        <button type="submit" class="btn btn-success btn-user btn-block">Login</button>
                                     </form>
                                     <hr>
                                     <div class="text-center small">
