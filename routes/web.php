@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\DashboardAdminController;
+use App\Http\Controllers\HewanController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ZonaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,10 +18,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// Route::get('/', function () {
+//     return view('userPage.welcome');
+// });
 Route::get('/', function () {
-    return view('userPage.welcome');
-});
-Route::get('/test', function () {
     return view('userPage.test');
 });
 
@@ -44,7 +46,8 @@ Route::post('/deleteUser/{user:id}', [UserController::class, 'deleteUser'])->mid
 Route::get('/editUser/{user:id}', [UserController::class, 'editUser'])->middleware('admin');
 
 // Resource Route
-
+Route::resource('/master/data-hewan', HewanController::class)->middleware('admin');
+Route::resource('/master/data-zona', ZonaController::class)->middleware('admin');
 
 // ==== End Admin Routes ====
 
