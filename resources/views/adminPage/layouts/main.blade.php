@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>NSparkel</title>
+    <title>EcoZooExplorer</title>
 
     <!-- Custom fonts for this template-->
     <link href="{{ asset('assets_admin/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">

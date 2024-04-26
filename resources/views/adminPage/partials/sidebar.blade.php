@@ -32,10 +32,8 @@
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="/master/data-*">Data 1</a>
-                <a class="collapse-item" href="/master/data-*">Data 2</a>
-                <a class="collapse-item" href="/master/data-*">Data 3</a>
-                <a class="collapse-item" href="/master/data-*">Data 4</a>
+                <a class="collapse-item" href="/master/data-hewan">Data Hewan</a>
+                <a class="collapse-item" href="/master/data-zona">Data Zona</a>
             </div>
         </div>
     </li>
