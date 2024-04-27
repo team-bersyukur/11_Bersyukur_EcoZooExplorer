@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('zonas', function (Blueprint $table) {
             $table->id();
             $table->string('nama_zona');
-            $table->string('deskripsi_zona');
+            $table->text('deskripsi_zona');
             $table->string('foto_zona');
             $table->string('foto_zona_detail');
             $table->timestamps();

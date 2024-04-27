@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('nama_hewan');
             $table->string('nama_ilmiah_hewan');
             $table->string('jenis_hewan');
-            $table->string('deskripsi');
+            $table->text('deskripsi');
             $table->string('foto');
             $table->timestamps();
         });
