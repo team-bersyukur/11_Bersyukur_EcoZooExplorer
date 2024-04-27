@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardAdminController;
+use App\Http\Controllers\DashboardUserController;
 use App\Http\Controllers\HewanController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
@@ -21,9 +22,11 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('userPage.welcome');
 // });
-Route::get('/', function () {
-    return view('userPage.test');
-});
+// Route::get('/', function () {
+//     return view('userPage.main');
+// });
+
+Route::get('/', [DashboardUserController::class, 'index'])->name('home')->middleware('auth');
 
 // ==== Login and Register Routes ====
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
@@ -57,6 +60,7 @@ Route::resource('/master/data-zona', ZonaController::class)->middleware('admin')
 Route::get('/seluruh-user', [UserController::class, 'seluruhUser'])->middleware(['admin']);
 Route::get('/getUserDetail/{user:id}', [UserController::class, 'getUserDetail'])->name('getUserDetail')->middleware(['admin']);
 Route::post('/changeDataUser/{user:id}', [UserController::class, 'changeDataUser'])->middleware('auth');
+Route::get('/zona/{zona:id}', [DashboardUserController::class, 'getZona'])->middleware('auth');
 
 // Resource Route
 

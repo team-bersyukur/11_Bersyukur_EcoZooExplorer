@@ -46,6 +46,21 @@
                             @enderror
                         </div>
                         <div class="mb-4">
+                            <label for="imageFileDetail" class="form-label">Foto Detail Zona</label>
+                            @if ($zona->foto_zona_detail)
+                                <img src="{{ asset('storage/' . $zona->foto_zona_detail) }}"
+                                    class="imgPreviewDet img-fluid d-block mb-3 col-sm-5" style="width: 100px">
+                            @endif
+                            <img class="imgPreviewDet img-fluid col-sm-5 d-block mb-3" style="width: 100px">
+                            <input type="file" class="form-control @error('foto_zona_detail') is-invalid @enderror" name="foto_zona_detail"
+                                id="imageFileDetail" onchange="tampilImageDetail()">
+                            @error('foto_zona_detail')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="mb-4">
                             <label for="deskripsi_zona">Deskripsi</label>
                             <input id="deskripsi_zona" type="hidden" name="deskripsi_zona"
                                 value="{{ old('deskripsi_zona', $zona->deskripsi_zona) }}" required>
@@ -85,6 +100,19 @@
         function tampilImage() {
             const image = document.querySelector('#imageFile');
             const imgPreview = document.querySelector('.imgPreview');
+
+            const oFReader = new FileReader();
+
+            oFReader.readAsDataURL(image.files[0]);
+
+            oFReader.onload = function(oFREvent) {
+                imgPreview.src = oFREvent.target.result;
+            }
+        }
+
+        function tampilImageDetail() {
+            const image = document.querySelector('#imageFileDetail');
+            const imgPreview = document.querySelector('.imgPreviewDet');
 
             const oFReader = new FileReader();
 

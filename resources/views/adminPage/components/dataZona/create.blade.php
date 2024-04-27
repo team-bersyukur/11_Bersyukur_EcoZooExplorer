@@ -40,6 +40,17 @@
                             @enderror
                         </div>
                         <div class="mb-4">
+                            <label for="imageFileDetail" class="form-label">Foto Detail Zona</label>
+                            <img class="imgPreviewDet img-fluid col-sm-5 d-block mb-3" style="width: 100px">
+                            <input type="file" class="form-control @error('foto_zona_detail') is-invalid @enderror" name="foto_zona_detail"
+                                id="imageFileDetail" onchange="tampilImage()">
+                            @error('foto_zona_detail')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="mb-4">
                             <label for="deskripsi_zona">Deskripsi</label>
                             <input id="deskripsi_zona" type="hidden" name="deskripsi_zona" value="{{ old('deskripsi_zona') }}" required>
                             <trix-editor input="deskripsi_zona"></trix-editor>
@@ -78,6 +89,19 @@
         function tampilImage() {
             const image = document.querySelector('#imageFile');
             const imgPreview = document.querySelector('.imgPreview');
+
+            const oFReader = new FileReader();
+
+            oFReader.readAsDataURL(image.files[0]);
+
+            oFReader.onload = function(oFREvent) {
+                imgPreview.src = oFREvent.target.result;
+            }
+        }
+
+        function tampilImageDetail() {
+            const image = document.querySelector('#imageFileDetail');
+            const imgPreview = document.querySelector('.imgPreviewDet');
 
             const oFReader = new FileReader();
 
