@@ -27,6 +27,8 @@
 
     <!-- Template Main CSS File -->
     <link href="{{ asset('assets_front/assets/css/style.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 
     <!-- =======================================================
   * Template Name: Regna
@@ -46,6 +48,10 @@
             /* transform: scale(1.1); */
             transition: 0.4s;
             filter: grayscale(0%)
+        }
+
+        #mapTracker {
+            height: 400px;
         }
     </style>
 </head>
@@ -133,7 +139,7 @@
                 <div class="row about-container">
 
                     <div class="col-lg-6 content order-lg-1 order-2">
-                        <h2 class="title">Kebung Binatang Surabaya</h2>
+                        <h2 class="title">Kebun Binatang Surabaya</h2>
                         <p>
                             didirikan oleh seorang jurnalis yang memiliki hobi mengumpulkan binatang yakni, H.F.K.
                             Kommer pada 31 Agustus 1916, dengan nama vereeninging “Soerabaiasche Planten-en Dierentuin”
@@ -447,7 +453,7 @@
                         </div>
                     @endforeach
                 </div>
-                <div class="card">
+                <div class="card mb-5">
                     <div class="card-header">
                         <h3 id="card-title" class="card-title"></h3>
                     </div>
@@ -459,6 +465,7 @@
                         <ul id="hewan" class="mt-5"></ul>
                     </div>
                 </div>
+                <div id="mapTracker"></div>
             </div>
         </section><!-- End Team Section -->
 
@@ -514,6 +521,8 @@
     <script src="{{ asset('assets_front/assets/js/main.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
         crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -560,6 +569,40 @@
         });
     </script>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Inisialisasi peta dengan koordinat default
+            var map = L.map('mapTracker').setView([51.505, -0.09], 15); // Change the zoom level to 15
+
+            // Tambahkan tile layer dari OpenStreetMap
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            // Tambahkan kontrol zoom
+            L.control.zoom({
+                position: 'topright'
+            }).addTo(map);
+
+            // Periksa apakah Geolocation didukung oleh browser
+            if ('geolocation' in navigator) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    // Dapatkan koordinat pengguna
+                    var userLat = position.coords.latitude;
+                    var userLng = position.coords.longitude;
+
+                    // Set peta ke lokasi pengguna
+                    map.setView([userLat, userLng], 17); // Change the zoom level to 15
+
+                    // Tambahkan marker untuk lokasi pengguna
+                    var marker = L.marker([userLat, userLng]).addTo(map);
+                    marker.bindPopup("Anda berada di sini.").openPopup();
+                });
+            } else {
+                alert('Geolocation tidak didukung oleh browser Anda.');
+            }
+        });
+    </script>
 
 </body>
 
