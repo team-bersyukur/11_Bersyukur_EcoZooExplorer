@@ -49,6 +49,7 @@
             transition: 0.4s;
             filter: grayscale(0%);
         }
+
         #mapTracker {
             height: 400px;
         }
@@ -65,24 +66,25 @@
     @include('userPage.partials.footer')
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header headerModal">
-              <h1 class="modal-title fs-5 " id="zona_hewan"></h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-content">
+                <div class="modal-header headerModal">
+                    <h1 class="modal-title fs-5 " id="zona_hewan"></h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h2 id="nama_hewan" class="fw-bold"></h2>
+                    <h5 id="nama_ilmiah" class="fst-italic">
+                        </h4>
+                        <h6 id="jenis"></h6>
+                        <p id="deskripsiHewan"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
             </div>
-            <div class="modal-body">
-              <h2 id="nama_hewan" class="fw-bold"></h2>
-              <h5 id="nama_ilmiah" class="fst-italic"></h4>
-              <h6 id="jenis"></h6>
-              <p id="deskripsiHewan"></p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
-          </div>
         </div>
     </div>
-    
+
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i></a>
@@ -132,19 +134,19 @@
                             console.log(data);
                             let header = document.querySelector('.headerCard');
 
-                            if(data.data.nama_zona == 'Zona 1') {
+                            if (data.data.nama_zona == 'Zona 1') {
                                 header.style.backgroundColor = warna1;
                                 header.style.color = 'white';
-                            } else if (data.data.nama_zona == 'Zona 2'){
+                            } else if (data.data.nama_zona == 'Zona 2') {
                                 header.style.backgroundColor = warna2;
                                 header.style.color = 'black';
-                            } else if (data.data.nama_zona == 'Zona 3'){
+                            } else if (data.data.nama_zona == 'Zona 3') {
                                 header.style.backgroundColor = warna3;
                                 header.style.color = 'white'
-                            } else if (data.data.nama_zona == 'Zona 4'){
+                            } else if (data.data.nama_zona == 'Zona 4') {
                                 header.style.backgroundColor = warna4;
                                 header.style.color = 'white';
-                            } else if (data.data.nama_zona == 'Zona 5'){
+                            } else if (data.data.nama_zona == 'Zona 5') {
                                 header.style.backgroundColor = warna5;
                                 header.style.color = 'white';
                             } else {
@@ -185,30 +187,31 @@
         let warna4 = '#004AAD'
         let warna5 = '#A83D01'
         let warna6 = '#31F3FF'
+
         function showModal(nama_hewan, nama_ilmiah, deskripsi, jenis, zona) {
             let header = document.querySelector('.headerModal');
-                if(zona == 'Zona 1') {
-                    header.style.backgroundColor = warna1;
-                    header.style.color = 'white';
-                } else if (zona == 'Zona 2'){
-                    header.style.backgroundColor = warna2;
-                    header.style.color = 'black';
-                } else if (zona == 'Zona 3'){
-                    header.style.backgroundColor = warna3;
-                    header.style.color = 'white'
-                } else if (zona == 'Zona 4'){
-                    header.style.backgroundColor = warna4;
-                    header.style.color = 'white';
-                } else if (zona == 'Zona 5'){
-                    header.style.backgroundColor = warna5;
-                    header.style.color = 'white';
-                } else {
-                    header.style.backgroundColor = warna6;
-                    header.style.color = 'black';
-                }
+            if (zona == 'Zona 1') {
+                header.style.backgroundColor = warna1;
+                header.style.color = 'white';
+            } else if (zona == 'Zona 2') {
+                header.style.backgroundColor = warna2;
+                header.style.color = 'black';
+            } else if (zona == 'Zona 3') {
+                header.style.backgroundColor = warna3;
+                header.style.color = 'white'
+            } else if (zona == 'Zona 4') {
+                header.style.backgroundColor = warna4;
+                header.style.color = 'white';
+            } else if (zona == 'Zona 5') {
+                header.style.backgroundColor = warna5;
+                header.style.color = 'white';
+            } else {
+                header.style.backgroundColor = warna6;
+                header.style.color = 'black';
+            }
             document.getElementById('nama_hewan').innerText = nama_hewan;
-            document.getElementById('nama_ilmiah').innerText = '('+nama_ilmiah+')';
-            document.getElementById('jenis').innerText = 'Jenis : '+jenis;
+            document.getElementById('nama_ilmiah').innerText = '(' + nama_ilmiah + ')';
+            document.getElementById('jenis').innerText = 'Jenis : ' + jenis;
             document.getElementById('deskripsiHewan').innerText = deskripsi;
             document.getElementById('zona_hewan').innerText = zona;
         }

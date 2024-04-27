@@ -3,7 +3,8 @@
     <section id="hero">
         <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
             <h1 class="section-title">Map Zona Kebun Binatang Surabaya</h1>
-            <h3 class="section-description text-white" >Aktifkan <span class="text-danger fw-bold">GPS</span> anda untuk mengetahui lokasi akurat</h3>
+            <h3 class="section-description text-white">Aktifkan <span class="text-danger fw-bold">GPS</span> anda untuk
+                mengetahui lokasi akurat</h3>
         </div>
     </section>
     <section id="lokasi">
@@ -38,6 +39,21 @@
             <div id="mapTracker"></div>
         </div>
     </section>
+    <div class="container my-5" data-aos="fade-up">
+        <div class="section-header">
+            <h3 class="section-title">Daerah/Tempat Mana Yang Ingin Kamu Cari?</h3>
+            <p class="section-description">Cari Tempat Yang Ingin Kamu Kunjungi Disini</p>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-6">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Cari Tempat" id="search">
+                    <button class="btn btn-primary" type="button" onclick="searchLokasi()">Cari</button>
+                </div>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center" id="outputLokasi"></div>
+    </div>
     <section id="hewan" class="hewan">
         <div class="container" data-aos="fade-up">
             <div class="section-header">
@@ -45,14 +61,15 @@
                 <p class="section-description">Berikut hewan-hewan yang dilestarikan di Kebun Binatang Surabaya</p>
             </div>
             <div class="row hewan-container" data-aos="fade-up" data-aos-delay="200">
-                @foreach ($hewans as $hewan)    
+                @foreach ($hewans as $hewan)
                     <div class="col-lg-4 col-md-6 hewan-item filter-app">
-                        <img src="{{ asset('storage/' . $hewan->foto) }}" class="img-fluid"
-                            alt="">
+                        <img src="{{ asset('storage/' . $hewan->foto) }}" class="img-fluid" alt="">
                         <div class="hewan-info">
                             <h4>{{ $hewan->nama_hewan }}</h4>
                             <p style="font-style: italic">{{ $hewan->nama_ilmiah_hewan }}</p>
-                            <button type="button" class="btn details-link" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="showModal('{{ $hewan->nama_hewan }}', '{{ $hewan->nama_ilmiah_hewan }}', '{{ $hewan->deskripsi }}', '{{ $hewan->jenis_hewan }}', '{{ $hewan->zona->nama_zona }}')">
+                            <button type="button" class="btn details-link" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal"
+                                onclick="showModal('{{ $hewan->nama_hewan }}', '{{ $hewan->nama_ilmiah_hewan }}', '{{ $hewan->deskripsi }}', '{{ $hewan->jenis_hewan }}', '{{ $hewan->zona->nama_zona }}')">
                                 <i class="bi bi-eye"></i>
                             </button>
                         </div>
@@ -61,4 +78,49 @@
             </div>
         </div>
     </section>
+    <script>
+        function searchLokasi() {
+            let search = document.getElementById('search').value;
+
+            fetch('/search-lokasi?param=' + search)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    let output = document.getElementById('outputLokasi');
+                    output.innerHTML = '';
+
+                    if (data.hewans != null) {
+                        data.hewans.forEach(element => {
+                            output.innerHTML += `
+                                <div class="col-md-3 my-2">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">${element.nama_hewan}</h5>
+                                            <p class="card-text">Berada di ${element.zona.nama_zona}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                        });
+                    }
+
+                    if (data.bangunans != null) {
+                        data.bangunans.forEach(element => {
+                            output.innerHTML += `
+                                <div class="col-md-3 my-2">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">${element.nama_bangunan}</h5>
+                                            <p class="card-text">Berada di ${element.zona.nama_zona}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+
+                        });
+                    }
+
+                })
+        }
+    </script>
 @endsection
