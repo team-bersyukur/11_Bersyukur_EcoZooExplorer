@@ -11,16 +11,16 @@
                 Treasure</button>
         </form>
     </div>
-    <form action="/kode-unik" method="POST" class="my-4">
+    {{-- <form action="/kode-unik" method="POST" class="my-4">
         @csrf
         <div class="form-group">
             <label for="kode_unik">Kode Unik</label>
             <input type="text" class="form-control" id="kode_unik" name="kode_unik" required>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+    </form> --}}
 
-    <div class="row">
+    <div class="row my-4">
         <div class="col-md-4">
             <div id="reader" width="200"></div>
         </div>
@@ -158,39 +158,39 @@
             // handle the scanned code as you like, for example:
             console.log(`Code matched = ${decodedText}`, decodedResult);
 
-            // fetch('/kode-unik', {
-            //         method: 'POST',
-            //         headers: {
-            //             'Content-Type': 'application/json',
-            //             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            //         },
-            //         body: JSON.stringify({
-            //             kode_unik: decodedText
-            //         })
-            //     })
-            //     .then(response => response.json())
-            //     .then(data => {
-            //         if (data.status == 'success') {
-            //             Swal.fire({
-            //                 icon: 'success',
-            //                 title: 'Berhasil',
-            //                 text: data.message,
-            //             }).then((result) => {
-            //                 location.reload();
-            //             })
-            //         } else {
-            //             Swal.fire({
-            //                 icon: 'error',
-            //                 title: 'Gagal',
-            //                 text: data.message,
-            //             }).then((result) => {
-            //                 location.reload();
-            //             })
-            //         }
-            //     })
-            //     .catch((error) => {
-            //         console.error('Error:', error);
-            //     });
+            fetch('/kode-unik', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                    },
+                    body: JSON.stringify({
+                        kode_unik: decodedText
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status == 'success') {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Berhasil',
+                            text: data.message,
+                        }).then((result) => {
+                            location.reload();
+                        })
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Gagal',
+                            text: data.message,
+                        }).then((result) => {
+                            location.reload();
+                        })
+                    }
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
 
 
             // Stop the scanner to avoid scanning of other codes after the match.

@@ -47,7 +47,7 @@
         .map:hover {
             /* transform: scale(1.1); */
             transition: 0.4s;
-            filter: grayscale(0%)
+            filter: grayscale(0%);
         }
         #mapTracker {
             height: 400px;
@@ -58,93 +58,11 @@
 <body>
 
     <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top d-flex align-items-center header-transparent">
-        <div class="container d-flex justify-content-between align-items-center">
-
-            <div id="logo">
-                <a href="index.html"><img src="{{ asset('assets_front/assets/img/KBS-Logo-1.png') }}"
-                        style="max-width: 165px" alt=""></a>
-                <!-- Uncomment below if you prefer to use a text logo -->
-                <!--<h1><a href="index.html">Regna</a></h1>-->
-            </div>
-
-            <nav id="navbar" class="navbar">
-                <ul >
-                    <li><a class="nav-link scrollto text-warning" href="#hero">Home</a></li>
-                    <li><a class="nav-link scrollto text-warning" href="#contact">Lokasi</a></li>
-                    <li><a class="nav-link scrollto text-warning" href="#portfolio">Hewan</a></li>
-                </ul>
-                <i class="bi bi-list mobile-nav-toggle"></i>
-            </nav><!-- .navbar -->
-        </div>
-    </header><!-- End Header -->
+    @include('userPage.partials.header')
     <main id="main">
-        <section id="team">
-            <div class="container-fluid" data-aos="fade-up">
-                <div class="section-header">
-                    <h3 class="section-title">Map Zona Kebun Binatang Surabaya</h3>
-                    <h5 class="section-description">Aktifkan <span class="text-danger">GPS</span> anda untuk mengetahui lokasi akurat</h5>
-                </div>
-                <div class="row">
-                    <div class="container">
-                        <div class="row">
-                            @foreach ($zonas as $zona)
-                                <div class="col-md-4 g-0 zona-item">
-                                    <img src="{{ asset('storage/' . $zona->foto_zona_detail) }}" class="img-fluid map"
-                                        data-id="{{ $zona->id }}">
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header headerCard text-center">
-                        <h3 id="card-title" class="card-title mt-2"></h3>
-                    </div>
-                    <div class="card-body">
-                        <div class="d-flex p-3 rounded" style="background-color: rgba(218, 218, 218, 0.384)">
-                            <p id="deskripsi"></p>
-                        </div>
-                        <ul id="hewan" class="mt-5 d-flex row justify-content-center "></ul>
-                    </div>
-                </div>
-                <div id="mapTracker"></div>
-            </div>
-        </section><!-- End Team Section -->
-        <section id="portfolio" class="portfolio">
-            <div class="container" data-aos="fade-up">
-                <div class="section-header">
-                    <h3 class="section-title">Hewan</h3>
-                    <p class="section-description">Berikut hewan-hewan yang dilestarikan di Kebun Binatang Surabaya</p>
-                </div>
-                <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-                    @foreach ($hewans as $hewan)    
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <img src="{{ asset('storage/' . $hewan->foto) }}" class="img-fluid"
-                            alt="">
-                        <div class="portfolio-info">
-                            <h4>{{ $hewan->nama_hewan }}</h4>
-                            <p style="font-style: italic">{{ $hewan->nama_ilmiah_hewan }}</p>
-                            <button type="button" class="btn details-link" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="showModal('{{ $hewan->nama_hewan }}', '{{ $hewan->nama_ilmiah_hewan }}', '{{ $hewan->deskripsi }}', '{{ $hewan->jenis_hewan }}', '{{ $hewan->zona->nama_zona }}')">
-                                <i class="bi bi-eye"></i>
-                            </button>
-                        </div>
-                    </div>
-                    @endforeach
-                </div>
-
-            </div>
-        </section><!-- End Portfolio Section -->
-
-
-    </main><!-- End #main -->
-    <footer id="footer">
-        <div class="container">
-          <div class="credits">
-            Designed by <a href="#">Team Bersyukur</a>
-          </div>
-        </div>
-    </footer>
+        @yield('content')
+    </main>
+    @include('userPage.partials.footer')
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
@@ -163,7 +81,8 @@
             </div>
           </div>
         </div>
-      </div>
+    </div>
+    
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i></a>
@@ -183,6 +102,8 @@
         crossorigin="anonymous"></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -316,7 +237,7 @@
                     var userLng = position.coords.longitude;
 
                     // Set peta ke lokasi pengguna
-                    map.setView([userLat, userLng], 17); // Change the zoom level to 15
+                    map.setView([userLat, userLng], 20); // Change the zoom level to 15
 
                     // Tambahkan marker untuk lokasi pengguna
                     var marker = L.marker([userLat, userLng]).addTo(map);

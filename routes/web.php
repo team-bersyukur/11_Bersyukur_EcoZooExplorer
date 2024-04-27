@@ -28,7 +28,8 @@ use Illuminate\Support\Facades\Route;
 //     return view('userPage.main');
 // });
 
-Route::get('/', [DashboardUserController::class, 'index'])->name('home')->middleware('auth');
+Route::get('/', [DashboardUserController::class, 'index'])->name('home');
+Route::get('/treasure', [DashboardUserController::class, 'treasure'])->name('treasure');
 
 // ==== Login and Register Routes ====
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
@@ -66,7 +67,7 @@ Route::resource('/master/data-treasure', TreasureController::class)->middleware(
 Route::get('/seluruh-user', [UserController::class, 'seluruhUser'])->middleware(['admin']);
 Route::get('/getUserDetail/{user:id}', [UserController::class, 'getUserDetail'])->name('getUserDetail')->middleware(['admin']);
 Route::post('/changeDataUser/{user:id}', [UserController::class, 'changeDataUser'])->middleware('auth');
-Route::get('/zona/{zona:id}', [DashboardUserController::class, 'getZona'])->middleware('auth');
+Route::get('/zona/{zona:id}', [DashboardUserController::class, 'getZona']);
 
 // Resource Route
 
