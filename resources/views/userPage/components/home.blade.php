@@ -9,10 +9,6 @@
     </section>
     <section id="lokasi">
         <div class="container-fluid" data-aos="fade-up">
-            {{-- <div class="section-header">
-                <h3 class="section-title">Map Zona Kebun Binatang Surabaya</h3>
-                <h5 class="section-description">Aktifkan <span class="text-danger">GPS</span> anda untuk mengetahui lokasi akurat</h5>
-            </div> --}}
             <div class="row">
                 <div class="container">
                     <div class="row">
@@ -80,47 +76,92 @@
     </section>
     <script>
         function searchLokasi() {
-            let search = document.getElementById('search').value;
+    let search = document.getElementById('search').value;
+    let warna1 = '#8C52FF'
+            let warna2 = '#ffc0cb'
+            let warna3 = '#FF914D'
+            let warna4 = '#004AAD'
+            let warna5 = '#A83D01'
+            let warna6 = '#31F3FF'
+    fetch('/search-lokasi?param=' + search)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            let output = document.getElementById('outputLokasi');
+            output.innerHTML = '';
 
-            fetch('/search-lokasi?param=' + search)
-                .then(response => response.json())
-                .then(data => {
-                    console.log(data);
-                    let output = document.getElementById('outputLokasi');
-                    output.innerHTML = '';
+            if (data.hewans != null) {
+                data.hewans.forEach(element => {
+                    let cardColor, textColor;
+                            if(element.zona.nama_zona == 'Zona 1') {
+                                cardColor = warna1;
+                                textColor = 'white';
+                            } else if (element.zona.nama_zona == 'Zona 2'){
+                                cardColor = warna2;
+                                textColor = 'black';
+                            } else if (element.zona.nama_zona == 'Zona 3'){
+                                cardColor = warna3;
+                                textColor = 'white'
+                            } else if (element.zona.nama_zona == 'Zona 4'){
+                                cardColor = warna4;
+                                textColor = 'white';
+                            } else if (element.zona.nama_zona == 'Zona 5'){
+                                cardColor = warna5;
+                                textColor = 'white';
+                            } else {
+                                cardColor = warna6;
+                                textColor = 'black';
+                            }
 
-                    if (data.hewans != null) {
-                        data.hewans.forEach(element => {
-                            output.innerHTML += `
-                                <div class="col-md-3 my-2">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <h5 class="card-title">${element.nama_hewan}</h5>
-                                            <p class="card-text">Berada di ${element.zona.nama_zona}</p>
-                                        </div>
-                                    </div>
+                    output.innerHTML += `
+                        <div class="col-md-3 my-2">
+                            <div class="card" style="background-color: ${cardColor}; color: ${textColor};">
+                                <div class="card-body">
+                                    <h5 class="card-title fw-medium">${element.nama_hewan}</h5>
+                                    <p class="card-text">Berada di <b>${element.zona.nama_zona}</b></p>
                                 </div>
-                            `;
-                        });
-                    }
+                            </div>
+                        </div>
+                    `;
+                });
+            }
 
-                    if (data.bangunans != null) {
-                        data.bangunans.forEach(element => {
-                            output.innerHTML += `
-                                <div class="col-md-3 my-2">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <h5 class="card-title">${element.nama_bangunan}</h5>
-                                            <p class="card-text">Berada di ${element.zona.nama_zona}</p>
-                                        </div>
-                                    </div>
+            if (data.bangunans != null) {
+                data.bangunans.forEach(element => {
+                    let cardColor, textColor;
+                            if(element.zona.nama_zona == 'Zona 1') {
+                                cardColor = warna1;
+                                textColor = 'white';
+                            } else if (element.zona.nama_zona == 'Zona 2'){
+                                cardColor = warna2;
+                                textColor = 'black';
+                            } else if (element.zona.nama_zona == 'Zona 3'){
+                                cardColor = warna3;
+                                textColor = 'white'
+                            } else if (element.zona.nama_zona == 'Zona 4'){
+                                cardColor = warna4;
+                                textColor = 'white';
+                            } else if (element.zona.nama_zona == 'Zona 5'){
+                                cardColor = warna5;
+                                textColor = 'white';
+                            } else {
+                                cardColor = warna6;
+                                textColor = 'black';
+                            }
+
+                    output.innerHTML += `
+                        <div class="col-md-3 my-2">
+                            <div class="card" style="background-color: ${cardColor}; color: ${textColor};">
+                                <div class="card-body">
+                                    <h5 class="card-title fw-medium">${element.nama_bangunan}</h5>
+                                    <p class="card-text">Berada di <b>${element.zona.nama_zona}</b></p>
                                 </div>
-                            `;
-
-                        });
-                    }
-
-                })
-        }
+                            </div>
+                        </div>
+                    `;
+                });
+            }
+        });
+}
     </script>
 @endsection

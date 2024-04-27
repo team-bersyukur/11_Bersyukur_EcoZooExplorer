@@ -3,7 +3,7 @@
 <section id="hero">
     <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
         <h1 class="section-title">Temukan harta karun anda</h1>
-        <h3 class="section-description text-white" >Aktifkan <span class="text-danger fw-bold">kamera</span> anda untuk memindai barcode</h3>
+        <h3 class="section-description text-white" >Aktifkan <span class="text-warning fw-bold">kamera</span> anda untuk memindai barcode</h3>
     </div>
 </section>
 <div class="container my-5 w-50">
@@ -12,7 +12,6 @@
 <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
     <script>
         function onScanSuccess(decodedText, decodedResult) {
-            // handle the scanned code as you like, for example:
             console.log(`Code matched = ${decodedText}`, decodedResult);
 
             fetch('/kode-unik', {
@@ -49,8 +48,6 @@
                     console.error('Error:', error);
                 });
 
-
-            // Stop the scanner to avoid scanning of other codes after the match.
             html5QrcodeScanner.clear();
         }
 
@@ -66,7 +63,6 @@
                     height: 250
                 }
             },
-            /* verbose= */
             false);
         html5QrcodeScanner.render(onScanSuccess, onScanFailure);
     </script>

@@ -1,5 +1,4 @@
 @extends('adminPage.layouts.main')
-
 @section('content')
     <div class="container mb-4">
         <h2 class="fw-bolder" style="font-weight: bold">Master Data</h2>

@@ -1,7 +1,5 @@
 <div class="modal fade" id="userModal">
     <div class="modal-dialog">
-
-        <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">Detail User</h4>

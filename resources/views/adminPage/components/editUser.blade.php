@@ -1,4 +1,3 @@
-{{-- @dd($checkoutsDel) --}}
 @extends('adminPage.layouts.main')
 @section('content')
     <div class="container">
@@ -6,14 +5,12 @@
             <div class="container-xl px-4 mt-4">
                 <div class="row">
                     <div class="col-xl-4">
-                        <!-- Profile picture card-->
                         <div class="card mb-4 mb-xl-0">
                             <div class="card-header">Foto Profile</div>
                             <div class="card-body text-center">
                                 <form method="POST" action="/changeDataUser/{{ $user->id }}"
                                     enctype="multipart/form-data">
                                     @csrf
-                                    <!-- Profile picture image-->
                                     @if ($user->picture_profile)
                                         <img class="imgPreview img-profile mb-2"
                                             src="{{ asset('storage/' . $user->picture_profile) }}" width="170">
@@ -32,15 +29,12 @@
                                             </div>
                                         @enderror
                                     </div>
-                                    <!-- Profile picture help block-->
                                     <div class="small font-italic text-muted mb-4">JPG, PNG, JPEG tidak lebih 2 MB
                                     </div>
-                                    <!-- Profile picture upload button-->
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-8">
-                        <!-- Account details card-->
                         <div class="card mb-4">
                             <div class="card-header">User Details</div>
                             <div class="card-body">
