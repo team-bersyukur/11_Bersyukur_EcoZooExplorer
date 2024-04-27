@@ -68,6 +68,7 @@ Route::get('/seluruh-user', [UserController::class, 'seluruhUser'])->middleware(
 Route::get('/getUserDetail/{user:id}', [UserController::class, 'getUserDetail'])->name('getUserDetail')->middleware(['admin']);
 Route::post('/changeDataUser/{user:id}', [UserController::class, 'changeDataUser'])->middleware('auth');
 Route::get('/zona/{zona:id}', [DashboardUserController::class, 'getZona']);
+Route::get('/search-lokasi', [DashboardUserController::class, 'searchLokasi']);
 
 // Resource Route
 
