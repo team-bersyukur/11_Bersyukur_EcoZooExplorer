@@ -3,7 +3,6 @@
     <div class="d-flex">
         <a href="/master/data-treasure/create" class="btn btn-info mb-4"><i class=" fas fa-solid fa-plus"></i> Tambah Data
             Treasure</a>
-        {{-- <a href="/acak-treasure" class="btn btn-primary mb-4 ml-2"><i class=" fas fa-solid fa-random"></i> Acak Treasure</a> --}}
         <form action="/acak-treasure" method="post">
             @method('put')
             @csrf
@@ -11,14 +10,6 @@
                 Treasure</button>
         </form>
     </div>
-    {{-- <form action="/kode-unik" method="POST" class="my-4">
-        @csrf
-        <div class="form-group">
-            <label for="kode_unik">Kode Unik</label>
-            <input type="text" class="form-control" id="kode_unik" name="kode_unik" required>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form> --}}
 
     <div class="row my-4">
         <div class="col-md-4">
@@ -155,7 +146,6 @@
     <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
     <script>
         function onScanSuccess(decodedText, decodedResult) {
-            // handle the scanned code as you like, for example:
             console.log(`Code matched = ${decodedText}`, decodedResult);
 
             fetch('/kode-unik', {
@@ -193,7 +183,6 @@
                 });
 
 
-            // Stop the scanner to avoid scanning of other codes after the match.
             html5QrcodeScanner.clear();
         }
 
@@ -209,7 +198,6 @@
                     height: 250
                 }
             },
-            /* verbose= */
             false);
         html5QrcodeScanner.render(onScanSuccess, onScanFailure);
     </script>

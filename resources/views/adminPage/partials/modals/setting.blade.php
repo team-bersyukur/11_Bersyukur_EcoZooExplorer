@@ -9,7 +9,6 @@
                 <div class="container-xl px-4 mt-4">
                     <div class="row">
                         <div class="col-xl-10 mx-auto">
-                            <!-- Account details card-->
                             <div class="card mb-4">
                                 <div class="card-header">User Password</div>
                                 <div class="card-body">
@@ -45,7 +44,6 @@
                                                 </div>
                                             @enderror
                                         </div>
-                                        <!-- Submit button-->
                                         <button class="btn btn-primary" type="submit">Simpan Perubahan</button>
                                     </form>
                                 </div>
