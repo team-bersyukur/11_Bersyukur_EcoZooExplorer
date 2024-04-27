@@ -26,7 +26,7 @@
                                             class="fas fa-solid fa-pen"></i></a>
                                     <button type="button" class="btn btn-sm btn-primary" data-toggle="modal"
                                         data-target="#zonaDetail"
-                                        onclick="showImage('{{ $zona->foto_zona }}', {{ $zona->hewan }}, '{{ $zona->nama_zona }}', '{{ $zona->deskripsi_zona }}')">
+                                        onclick="showImage('{{ $zona->foto_zona_detail }}', {{ $zona->hewan }}, '{{ $zona->nama_zona }}', '{{ $zona->deskripsi_zona }}')">
                                         <i class="fas fa-solid fa-eye"></i>
                                     </button>
                                     <button class="btn btn-sm btn-danger hapus" data-id="{{ $zona->id }}"><i
