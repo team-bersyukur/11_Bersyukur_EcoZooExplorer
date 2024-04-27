@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Hewan;
 use App\Models\Zona;
 use Illuminate\Http\Request;
 
@@ -40,10 +41,12 @@ class ZonaController extends Controller
         $data = $request->validate([
             'nama_zona' => 'required',
             'deskripsi_zona' => 'required',
-            'foto_zona' => 'required'
+            'foto_zona' => 'required',
+            'foto_zona_detail' => 'required',
         ]);
 
-        $data['foto_zona'] = $request->file('foto_zona')->store('assets/fotoZona', 'public');
+        $data['foto_zona'] = $request->file('foto_zona')->store('fotoZona', 'public');
+        $data['foto_zona_detail'] = $request->file('foto_zona_detail')->store('fotoZona', 'public');
 
         Zona::create($data);
 
@@ -94,9 +97,20 @@ class ZonaController extends Controller
             if (file_exists(storage_path('app/public/' . $zona->foto_zona))) {
                 unlink(storage_path('app/public/' . $zona->foto_zona));
             }
+
             $data['foto_zona'] = $request->file('foto_zona')->store('fotoZona', 'public');
         } else {
             $data['foto_zona'] = $zona->foto_zona;
+        }
+
+        if ($request->file('foto_zona_detail')) {
+            if (file_exists(storage_path('app/public/' . $zona->foto_zona_detail))) {
+                unlink(storage_path('app/public/' . $zona->foto_zona_detail));
+            }
+
+            $data['foto_zona_detail'] = $request->file('foto_zona_detail')->store('fotoZona', 'public');
+        } else {
+            $data['foto_zona_detail'] = $zona->foto_zona_detail;
         }
 
         $zona->update($data);
@@ -118,7 +132,13 @@ class ZonaController extends Controller
             unlink(storage_path('app/public/' . $zona->foto_zona));
         }
 
+        if (file_exists(storage_path('app/public/' . $zona->foto_zona_detail))) {
+            unlink(storage_path('app/public/' . $zona->foto_zona_detail));
+        }
+
         Zona::destroy($id);
+
+        Hewan::where('zona_id', $id)->delete();
 
         return redirect('/master/data-zona')->with('success', 'Data zona berhasil dihapus');
     }

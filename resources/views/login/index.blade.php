@@ -73,10 +73,6 @@
                                         Belum mempunyai akun?
                                         <a class="" href="/register">Register!</a>
                                     </div>
-                                    <div class="text-center small">
-                                        Lupa Password?
-                                        <a class="" href="/resetPassword">Reset!</a>
-                                    </div>
                                 </div>
                             </div>
                         </div>
