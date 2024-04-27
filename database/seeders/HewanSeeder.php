@@ -16,7 +16,7 @@ class HewanSeeder extends Seeder
     public function run()
     {
         Hewan::create([
-            'zona_id' => 3,
+            'zona_id' => 1,
             'nama_hewan' => 'Singa',
             'nama_ilmiah_hewan' => 'Panthera leo',
             'jenis_hewan' => 'Mammalia',
@@ -25,7 +25,7 @@ class HewanSeeder extends Seeder
         ]);
 
         Hewan::create([
-            'zona_id' => 3,
+            'zona_id' => 1,
             'nama_hewan' => 'Harimau',
             'nama_ilmiah_hewan' => 'Panthera tigris',
             'jenis_hewan' => 'Mammalia',
@@ -43,7 +43,7 @@ class HewanSeeder extends Seeder
         ]);
 
         Hewan::create([
-            'zona_id' => 4,
+            'zona_id' => 2,
             'nama_hewan' => 'Kera',
             'nama_ilmiah_hewan' => 'Primates',
             'jenis_hewan' => 'Mammalia',
@@ -83,8 +83,7 @@ class HewanSeeder extends Seeder
             'nama_hewan' => 'Rusa',
             'nama_ilmiah_hewan' => 'Cervidae',
             'jenis_hewan' => 'Mammalia',
-            'deskripsi' => '
-            - Deskripsi: Rusa adalah mamalia herbivora dengan tanduk pada hewan jantan. Mereka tersebar luas di berbagai habitat di seluruh dunia.',
+            'deskripsi' => 'Rusa adalah mamalia herbivora dengan tanduk pada hewan jantan. Mereka tersebar luas di berbagai habitat di seluruh dunia.',
             'foto' => 'fotoHewan/Rusa.jpg',
         ]);
 
@@ -205,7 +204,7 @@ class HewanSeeder extends Seeder
         ]);
 
         Hewan::create([
-            'zona_id' => 1,
+            'zona_id' => 3,
             'nama_hewan' => 'Julang',
             'nama_ilmiah_hewan' => 'Bucerotidae',
             'jenis_hewan' => 'Mammalia',
@@ -250,9 +249,9 @@ class HewanSeeder extends Seeder
         ]);
 
         Hewan::create([
-            'zona_id' => 1,
+            'zona_id' => 3,
             'nama_hewan' => 'Merak',
-            'nama_ilmiah_hewan' => 'Pavo cristatus',
+            'nama_ilmiah_hewan' => 'Pavocristatus',
             'jenis_hewan' => 'Aves',
             'deskripsi' => 'Merak adalah burung berwarna-warni dengan ekor yang panjang dan indah. Mereka sering dianggap sebagai simbol keindahan.',
             'foto' => 'fotoHewan/Merak.jpg',
@@ -292,6 +291,51 @@ class HewanSeeder extends Seeder
             'jenis_hewan' => 'Reptilia',
             'deskripsi' => 'Penyu adalah burung besar dengan paruh yang panjang dan sayap yang lebar. Mereka sering tinggal di hutan dan hutan mangrove.',
             'foto' => 'fotoHewan/Penyu.jpg',
+        ]);
+
+        Hewan::create([
+            'zona_id' => 6,
+            'nama_hewan' => 'Ular',
+            'nama_ilmiah_hewan' => 'Serpentes',
+            'jenis_hewan' => 'Reptilia',
+            'deskripsi' => 'Ular adalah reptil dengan tubuh panjang dan tanpa kaki. Mereka memiliki bahaya yang bervariasi, dari tidak berbahaya hingga sangat berbisa.',
+            'foto' => 'fotoHewan/Ular.jpg',
+        ]);
+
+        Hewan::create([
+            'zona_id' => 6,
+            'nama_hewan' => 'Jalak Bali',
+            'nama_ilmiah_hewan' => 'Leucopsar rothschildi',
+            'jenis_hewan' => ' Aves',
+            'deskripsi' => 'Jalak Bali adalah burung endemik pulau Bali yang terancam punah. Mereka memiliki bulu berwarna hitam dengan tambahan putih di sayap dan ekor.',
+            'foto' => 'fotoHewan/Jalak Bali.jpg',
+        ]);
+
+        Hewan::create([
+            'zona_id' => 6,
+            'nama_hewan' => 'Kakaktua',
+            'nama_ilmiah_hewan' => 'Cacatua',
+            'jenis_hewan' => 'Aves',
+            'deskripsi' => 'Kakaktua adalah burung berukuran sedang dengan paruh yang kuat dan ekor panjang. Mereka sering memiliki kemampuan meniru suara manusia.',
+            'foto' => 'fotoHewan/Kakaktua.jpg',
+        ]);
+
+        Hewan::create([
+            'zona_id' => 3,
+            'nama_hewan' => 'Flamingo',
+            'nama_ilmiah_hewan' => 'Phoenicopteridae',
+            'jenis_hewan' => 'Aves',
+            'deskripsi' => ' Flaminggo adalah burung air dengan leher panjang dan paruh yang melengkung. Mereka sering ditemukan di danau dan rawa-rawa.',
+            'foto' => 'fotoHewan/Flamingo.jpg',
+        ]);
+
+        Hewan::create([
+            'zona_id' => 3,
+            'nama_hewan' => 'Bangau',
+            'nama_ilmiah_hewan' => 'Ardeidae',
+            'jenis_hewan' => 'Aves',
+            'deskripsi' => '  Bangau adalah burung besar dengan leher panjang dan kaki yang tinggi. Mereka sering dijumpai di daerah berair dan rawa-rawa.',
+            'foto' => 'fotoHewan/Bangau.jpg',
         ]);
     }
 }
