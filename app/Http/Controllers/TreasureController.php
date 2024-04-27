@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Treasure;
 use App\Models\Zona;
+use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -164,14 +165,20 @@ class TreasureController extends Controller
                 $i++;
             }
 
+            // $now = new DateTime();
+            date_default_timezone_set('Asia/Jakarta');
+            
+            $now = date('Y-m-d H:i:s');
+
             return response()->json([
                 'status' => 'success',
-                'message' => 'Kode unik berhasil ditemukan'
+                'message' => 'YEAAYYYYY... Kamu menemukan harta karun tersembunyi. Screenshoot halaman ini untuk mendapatkan hadiah',
+                'waktu' => $now
             ]);
         } else {
             return response()->json([
                 'status' => 'error',
-                'message' => 'Kode unik tidak ditemukan'
+                'message' => 'Yahhh.... Kamu belum beruntung... :('
             ]);
         }
     }

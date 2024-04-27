@@ -12,8 +12,15 @@ class DashboardUserController extends Controller
     {
         $zonas = Zona::with('hewan')->get();
         $hewans = Hewan::all();
-        return view('userPage.main', compact('zonas','hewans'));
+        return view('userPage.components.home', compact('zonas','hewans'));
     }
+
+    public function treasure()
+    {
+        return view('userPage.components.treasure');
+    }
+
+
 
     public function getZona(Zona $zona)
     {

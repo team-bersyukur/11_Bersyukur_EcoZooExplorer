@@ -786,14 +786,14 @@ section {
   border: 2px solid #2dc997;
 }
 
-/* Portfolio Section
+/* hewan Section
 --------------------------------*/
-#portfolio {
+#hewan {
   background: #f7f7f7;
   padding: 80px 0;
 }
 
-#portfolio #portfolio-flters {
+#hewan #hewan-flters {
   padding: 0;
   margin: 0 auto 25px auto;
   list-style: none;
@@ -801,7 +801,7 @@ section {
   border-radius: 50px;
 }
 
-#portfolio #portfolio-flters li {
+#hewan #hewan-flters li {
   cursor: pointer;
   display: inline-block;
   padding: 12px 18px 14px 18px;
@@ -815,28 +815,28 @@ section {
   border-radius: 4px;
 }
 
-#portfolio #portfolio-flters li:hover,
-#portfolio #portfolio-flters li.filter-active {
+#hewan #hewan-flters li:hover,
+#hewan #hewan-flters li.filter-active {
   color: #fff;
   background: #2dc997;
 }
 
-#portfolio #portfolio-flters li:last-child {
+#hewan #hewan-flters li:last-child {
   margin-right: 0;
 }
 
-#portfolio .portfolio-item {
+#hewan .hewan-item {
   margin-bottom: 30px;
   overflow: hidden;
 }
 
-#portfolio .portfolio-item img {
+#hewan .hewan-item img {
   position: relative;
   top: 0;
   transition: all 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-#portfolio .portfolio-item .portfolio-info {
+#hewan .hewan-item .hewan-info {
   opacity: 0;
   position: absolute;
   left: 12px;
@@ -848,20 +848,20 @@ section {
   padding: 15px 20px;
 }
 
-#portfolio .portfolio-item .portfolio-info h4 {
+#hewan .hewan-item .hewan-info h4 {
   font-size: 18px;
   color: #fff;
   font-weight: 600;
 }
 
-#portfolio .portfolio-item .portfolio-info p {
+#hewan .hewan-item .hewan-info p {
   color: #fff;
   font-size: 14px;
   margin-bottom: 0;
 }
 
-#portfolio .portfolio-item .portfolio-info .preview-link,
-#portfolio .portfolio-item .portfolio-info .details-link {
+#hewan .hewan-item .hewan-info .preview-link,
+#hewan .hewan-item .hewan-info .details-link {
   position: absolute;
   right: 50px;
   font-size: 24px;
@@ -870,41 +870,41 @@ section {
   transition: ease-in-out 0.3s;
 }
 
-#portfolio .portfolio-item .portfolio-info .preview-link:hover,
-#portfolio .portfolio-item .portfolio-info .details-link:hover {
+#hewan .hewan-item .hewan-info .preview-link:hover,
+#hewan .hewan-item .hewan-info .details-link:hover {
   color: #a4ebd4;
 }
 
-#portfolio .portfolio-item .portfolio-info .details-link {
+#hewan .hewan-item .hewan-info .details-link {
   right: 15px;
 }
 
-#portfolio .portfolio-item:hover img {
+#hewan .hewan-item:hover img {
   top: -30px;
 }
 
-#portfolio .portfolio-item:hover .portfolio-info {
+#hewan .hewan-item:hover .hewan-info {
   opacity: 1;
   bottom: 0;
 }
 
 /*--------------------------------------------------------------
-# Portfolio Details
+# hewan Details
 --------------------------------------------------------------*/
-.portfolio-details {
+.hewan-details {
   padding-top: 40px;
 }
 
-.portfolio-details .portfolio-details-slider img {
+.hewan-details .hewan-details-slider img {
   width: 100%;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination {
+.hewan-details .hewan-details-slider .swiper-pagination {
   margin-top: 20px;
   position: relative;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
+.hewan-details .hewan-details-slider .swiper-pagination .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
   background-color: #fff;
@@ -912,16 +912,16 @@ section {
   border: 1px solid #2dc997;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
+.hewan-details .hewan-details-slider .swiper-pagination .swiper-pagination-bullet-active {
   background-color: #2dc997;
 }
 
-.portfolio-details .portfolio-info {
+.hewan-details .hewan-info {
   padding: 30px;
   box-shadow: 0px 0 30px rgba(102, 102, 102, 0.08);
 }
 
-.portfolio-details .portfolio-info h3 {
+.hewan-details .hewan-info h3 {
   font-size: 22px;
   font-weight: 700;
   margin-bottom: 20px;
@@ -929,27 +929,27 @@ section {
   border-bottom: 1px solid #eee;
 }
 
-.portfolio-details .portfolio-info ul {
+.hewan-details .hewan-info ul {
   list-style: none;
   padding: 0;
   font-size: 15px;
 }
 
-.portfolio-details .portfolio-info ul li+li {
+.hewan-details .hewan-info ul li+li {
   margin-top: 10px;
 }
 
-.portfolio-details .portfolio-description {
+.hewan-details .hewan-description {
   padding-top: 30px;
 }
 
-.portfolio-details .portfolio-description h2 {
+.hewan-details .hewan-description h2 {
   font-size: 26px;
   font-weight: 700;
   margin-bottom: 20px;
 }
 
-.portfolio-details .portfolio-description p {
+.hewan-details .hewan-description p {
   padding: 0;
 }
 
