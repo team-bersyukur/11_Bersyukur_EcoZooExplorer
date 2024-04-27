@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Zona;
+use App\Models\Hewan;
 use Illuminate\Http\Request;
 
 class DashboardUserController extends Controller
@@ -10,7 +11,8 @@ class DashboardUserController extends Controller
     public function index()
     {
         $zonas = Zona::with('hewan')->get();
-        return view('userPage.main', compact('zonas'));
+        $hewans = Hewan::all();
+        return view('userPage.main', compact('zonas','hewans'));
     }
 
     public function getZona(Zona $zona)
