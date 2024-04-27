@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\BangunanController;
 use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\DashboardUserController;
 use App\Http\Controllers\HewanController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\TreasureController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ZonaController;
 use Illuminate\Support\Facades\Route;
@@ -47,10 +49,14 @@ Route::post('/ubahPass', [LoginController::class, 'ubahPass'])->middleware('gues
 Route::get('/dashboard-admin', [DashboardAdminController::class, 'index'])->middleware('admin');
 Route::post('/deleteUser/{user:id}', [UserController::class, 'deleteUser'])->middleware('admin');
 Route::get('/editUser/{user:id}', [UserController::class, 'editUser'])->middleware('admin');
+Route::put('/acak-treasure', [TreasureController::class, 'acakTreasure'])->middleware('admin');
+Route::post('/kode-unik', [TreasureController::class, 'kodeUnik']);
 
 // Resource Route
 Route::resource('/master/data-hewan', HewanController::class)->middleware('admin');
 Route::resource('/master/data-zona', ZonaController::class)->middleware('admin');
+Route::resource('/master/data-bangunan', BangunanController::class)->middleware('admin');
+Route::resource('/master/data-treasure', TreasureController::class)->middleware('admin');
 
 // ==== End Admin Routes ====
 

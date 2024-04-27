@@ -15,4 +15,14 @@ class Zona extends Model
     {
         return $this->hasMany(Hewan::class, );
     }
+
+    public function bangunan()
+    {
+        return $this->hasMany(Bangunan::class);
+    }
+
+    public function treasure()
+    {
+        return $this->hasMany(Treasure::class);
+    }
 }
