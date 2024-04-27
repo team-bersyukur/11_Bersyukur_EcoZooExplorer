@@ -4,95 +4,94 @@
     <div class="container mb-4">
         <h2 class="fw-bolder" style="font-weight: bold">Master Data</h2>
         <div class="row mt-3">
-            {{-- <div class="col-xl-3 col-md-6 mb-4">
+            <div class="col-xl-4 col-md-6 mb-4">
                 <div class="card shadow h-100 py-2" style="border-left: 4px solid yellowgreen">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-uppercase mb-1" style="color: yellowgreen">
-                                    Total Kategori
+                                    Total Hewan
                                 </div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ count($kategoris) }}</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ count($hewans) }}</div>
                             </div>
                             <div class="col-auto">
-                                <i class="fa fa-list fa-2x text-gray-300"></i>
+                                <i class="fa fa-bug fa-2x text-gray-300"></i>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card shadow h-100 py-2" style="border-left: 4px solid cyan">
-                    <div class="card-body">
-                        <div class="row no-gutters align-items-center">
-                            <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-uppercase mb-1" style="color: cyan">
-                                    Total Barang (Seluruh)
-                                </div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ count($barangs) }}</div>
-                            </div>
-                            <div class="col-auto">
-                                <i class="fa fa-cubes fa-2x text-gray-300"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xl-3 col-md-6 mb-4">
+            <div class="col-xl-4 col-md-6 mb-4">
                 <div class="card shadow h-100 py-2" style="border-left: 4px solid green">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-uppercase mb-1" style="color: green">
-                                    Total Barang (Tersedia)
+                                    Total Zona
                                 </div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ count($barangSiap) }}</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ count($zonas) }}</div>
                             </div>
                             <div class="col-auto">
-                                <i class="fa fa-cube fa-2x text-gray-300"></i>
+                                <i class="fa fa-map fa-2x text-gray-300"></i>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-xl-3 col-md-6 mb-4">
+            <div class="col-xl-4 col-md-6 mb-4">
                 <div class="card shadow h-100 py-2" style="border-left: 4px solid red">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-uppercase mb-1" style="color: red">
-                                    Data Montir
+                                    Total Bangunan
                                 </div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ count($montirs) }}</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ count($bangunans) }}</div>
                             </div>
                             <div class="col-auto">
-                                <i class="fa fa-user-circle fa-2x text-gray-300"></i>
+                                <i class="fa fa-home fa-2x text-gray-300"></i>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-xl-3 col-md-6 mb-4">
+            <div class="col-xl-6 col-md-6 mb-4">
                 <div class="card shadow h-100 py-2" style="border-left: 4px solid cadetblue">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-uppercase mb-1" style="color: cadetblue">
-                                    Total Pelayanan
+                                    Total Treasure (Benar)
                                 </div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ count($pelayanans) }}</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ count($treasuresTrue) }}</div>
                             </div>
                             <div class="col-auto">
-                                <i class="fa fa-wrench fa-2x text-gray-300"></i>
+                                <i class="fa fa-star fa-2x text-gray-300"></i>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div> --}}
+            </div>
+            <div class="col-xl-6 col-md-6 mb-4">
+                <div class="card shadow h-100 py-2" style="border-left: 4px solid cadetblue">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-uppercase mb-1" style="color: cadetblue">
+                                    Total Treasure (Salah)
+                                </div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ count($treasuresFalse) }}</div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fa fa-times fa-2x text-gray-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 @endsection

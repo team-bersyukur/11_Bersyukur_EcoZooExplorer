@@ -3,13 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Zona;
+use App\Models\Hewan;
+use App\Models\Bangunan;
+use App\Models\Treasure;
 use Illuminate\Http\Request;
 
 class DashboardAdminController extends Controller
 {
     public function index()
     {
-        return view('adminPage.components.dashboard');
+      $zonas = Zona::all();
+      $hewans = Hewan::all();
+      $bangunans = Bangunan::all();
+      $treasuresTrue = Treasure::where('lucky', true)->get();
+      $treasuresFalse = Treasure::where('lucky', false)->get();
+        return view('adminPage.components.dashboard', compact('zonas','hewans','bangunans','treasuresTrue','treasuresFalse'));
     }
 
     public function seluruhUser()
