@@ -76,36 +76,36 @@
     </section>
     <script>
         function searchLokasi() {
-    let search = document.getElementById('search').value;
-    let warna1 = '#8C52FF'
+            let search = document.getElementById('search').value;
+            let warna1 = '#8C52FF'
             let warna2 = '#ffc0cb'
             let warna3 = '#FF914D'
             let warna4 = '#004AAD'
             let warna5 = '#A83D01'
             let warna6 = '#31F3FF'
-    fetch('/search-lokasi?param=' + search)
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-            let output = document.getElementById('outputLokasi');
-            output.innerHTML = '';
+            fetch('/search-lokasi?param=' + search)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    let output = document.getElementById('outputLokasi');
+                    output.innerHTML = '';
 
-            if (data.hewans != null) {
-                data.hewans.forEach(element => {
-                    let cardColor, textColor;
-                            if(element.zona.nama_zona == 'Zona 1') {
+                    if (data.hewans != null) {
+                        data.hewans.forEach(element => {
+                            let cardColor, textColor;
+                            if (element.zona.nama_zona == 'Zona 1') {
                                 cardColor = warna1;
                                 textColor = 'white';
-                            } else if (element.zona.nama_zona == 'Zona 2'){
+                            } else if (element.zona.nama_zona == 'Zona 2') {
                                 cardColor = warna2;
                                 textColor = 'black';
-                            } else if (element.zona.nama_zona == 'Zona 3'){
+                            } else if (element.zona.nama_zona == 'Zona 3') {
                                 cardColor = warna3;
                                 textColor = 'white'
-                            } else if (element.zona.nama_zona == 'Zona 4'){
+                            } else if (element.zona.nama_zona == 'Zona 4') {
                                 cardColor = warna4;
                                 textColor = 'white';
-                            } else if (element.zona.nama_zona == 'Zona 5'){
+                            } else if (element.zona.nama_zona == 'Zona 5') {
                                 cardColor = warna5;
                                 textColor = 'white';
                             } else {
@@ -113,7 +113,7 @@
                                 textColor = 'black';
                             }
 
-                    output.innerHTML += `
+                            output.innerHTML += `
                         <div class="col-md-3 my-2">
                             <div class="card" style="background-color: ${cardColor}; color: ${textColor};">
                                 <div class="card-body">
@@ -123,25 +123,25 @@
                             </div>
                         </div>
                     `;
-                });
-            }
+                        });
+                    }
 
-            if (data.bangunans != null) {
-                data.bangunans.forEach(element => {
-                    let cardColor, textColor;
-                            if(element.zona.nama_zona == 'Zona 1') {
+                    if (data.bangunans != null) {
+                        data.bangunans.forEach(element => {
+                            let cardColor, textColor;
+                            if (element.zona.nama_zona == 'Zona 1') {
                                 cardColor = warna1;
                                 textColor = 'white';
-                            } else if (element.zona.nama_zona == 'Zona 2'){
+                            } else if (element.zona.nama_zona == 'Zona 2') {
                                 cardColor = warna2;
                                 textColor = 'black';
-                            } else if (element.zona.nama_zona == 'Zona 3'){
+                            } else if (element.zona.nama_zona == 'Zona 3') {
                                 cardColor = warna3;
                                 textColor = 'white'
-                            } else if (element.zona.nama_zona == 'Zona 4'){
+                            } else if (element.zona.nama_zona == 'Zona 4') {
                                 cardColor = warna4;
                                 textColor = 'white';
-                            } else if (element.zona.nama_zona == 'Zona 5'){
+                            } else if (element.zona.nama_zona == 'Zona 5') {
                                 cardColor = warna5;
                                 textColor = 'white';
                             } else {
@@ -149,7 +149,7 @@
                                 textColor = 'black';
                             }
 
-                    output.innerHTML += `
+                            output.innerHTML += `
                         <div class="col-md-3 my-2">
                             <div class="card" style="background-color: ${cardColor}; color: ${textColor};">
                                 <div class="card-body">
@@ -159,9 +159,9 @@
                             </div>
                         </div>
                     `;
+                        });
+                    }
                 });
-            }
-        });
-}
+        }
     </script>
 @endsection

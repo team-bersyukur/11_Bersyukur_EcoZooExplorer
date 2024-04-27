@@ -52,9 +52,9 @@
     <script src="{{ asset('assets_admin/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('assets_admin/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
     <script src="{{ asset('assets_admin/js/sb-admin-2.min.js') }}"></script>
-    <script src="{{ asset('assets_admin/vendor/chart.js/Chart.min.js') }} "></script>
+    {{-- <script src="{{ asset('assets_admin/vendor/chart.js/Chart.min.js') }} "></script>
     <script src="{{ asset('assets_admin/js/demo/chart-area-demo.js') }}"></script>
-    <script src="{{ asset('assets_admin/js/demo/chart-pie-demo.js') }}"></script>
+    <script src="{{ asset('assets_admin/js/demo/chart-pie-demo.js') }}"></script> --}}
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
