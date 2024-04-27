@@ -15,7 +15,7 @@ class HewanController extends Controller
      */
     public function index()
     {
-        $hewans = Hewan::all();
+        $hewans = Hewan::with('zona')->get();
 
         return view('adminPage.components.dataHewan.index', compact('hewans'));
     }

@@ -4,7 +4,7 @@
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dashboard-admin">
         <div class="sidebar-brand-icon">
-            <img src="{{ asset('assets/img/nsparkel_logo.png') }}" alt="NSParkel" width="90" class="rounded-circle">
+            <img src="{{ asset('assets_front/assets/img/Logo-KBS-1.png') }}" alt="EcoZoo" width="90" class="rounded-circle">
         </div>
         {{-- <div class="sidebar-brand-text mx-3">NS<sub>parkel</sub></div> --}}
     </a>
@@ -34,6 +34,8 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="/master/data-hewan">Data Hewan</a>
                 <a class="collapse-item" href="/master/data-zona">Data Zona</a>
+                <a class="collapse-item" href="/master/data-bangunan">Data Bangunan</a>
+                <a class="collapse-item" href="/master/data-treasure">Data Treasure</a>
             </div>
         </div>
     </li>
